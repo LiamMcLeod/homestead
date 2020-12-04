@@ -9,6 +9,9 @@ class Homestead
 
     # Allow SSH Agent Forward from The Box
     config.ssh.forward_agent = true
+    config.ssh.password = "vagrant"
+    config.ssh.keys_only = false
+    config.ssh.insert_key = true
 
     # Configure Verify Host Key
     if settings.has_key?('verify_host_key')
@@ -111,10 +114,14 @@ class Homestead
     # Default Port Forwarding
     default_ports = {
       80 => 8000,
+      8000 => 8080, #Laravel App
+      3000 => 3000, #NodeJS Apps
+      3030 => 3030, #Laravel App
       443 => 44300,
       3306 => 33060,
       4040 => 4040,
       5432 => 54320,
+      1337 => 1337,
       8025 => 8025,
       9600 => 9600,
       27017 => 27017

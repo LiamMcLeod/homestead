@@ -11,11 +11,17 @@ keys:
 
 folders:
     - map: ~/code
-      to: /home/vagrant/code
+      to: /home/vagrant/Code
 
 sites:
-    - map: homestead.test
-      to: /home/vagrant/code/public
+    - map: homestead.app
+      to: /home/vagrant/Code
+      
+    - map: laravel.dev
+      to: /home/vagrant/Code/credence/public
+
+    - map: aspen.dev
+      to: /home/vagrant/Code/Aspen/public
 
 databases:
     - homestead
@@ -25,9 +31,9 @@ features:
     - ohmyzsh: false
     - webdriver: false
 
-# ports:
-#     - send: 50000
-#       to: 5000
-#     - send: 7777
-#       to: 777
-#       protocol: udp
+ports:
+    - send: 3000
+      to: 3000
+    # - send: 3030
+    #   to: 3030
+      protocol: udp
